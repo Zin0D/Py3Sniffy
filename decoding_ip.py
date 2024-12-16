@@ -50,7 +50,39 @@ class IPV4_HEADER:
 
         #Mapping protocols
         self.protocol_map = {1: "ICMP" , 6: "TCP", 17: "UDP"} 
-        """ LOOK AT THIS WIKIPEDIA ENTRY TO UNDERSTAND THE PROTOCOL MAP
+        """ LOOK AT THIS WIKIPEDIA ENTRY TO UNDERSTAND THE PROTOCOL MAP VALUES
 
         .    https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers
         .                                                                """
+        try:
+            self.protocol = self.protocol_map[self.protocol] 
+        except Exception as e:
+            print("Protocol Not Found in Specified List")
+            self.protocol = str(self.protocol)
+            
+    def sniffit(host):
+        if os.name == 'nt':
+            socket_protocol = socket.IPPROTO_IP
+        else:
+            socket_protocol = socket.IPPROTO_ICMP 
+        
+        sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket_protocol) #Sniff only for the specified thing
+        sniffer.bind((host,0))
+        sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+
+        if os.name == 'nt':
+            sniffer.ioctl(socket.SIO_RCVALL ,socket.RCVALL_ON)
+
+        try:
+            while True:
+                raw_packet = sniffer.recvfrom(65535)[0] #We only want the Payload since we allready have our SRC Adress ;)#
+                header_info_ipv4 = IPV4_HEADER(raw_packet[0:20]) #NOW THE FUN BEGINNS
+                print(f'Protocol: {header_info_ipv4.protocol}, from: [{header_info_ipv4.src_adress}] --> [{header_info_ipv4.dst_adress}]')
+        except KeyboardInterrupt:
+            print("EXITING....")
+            if os.name == 'nt':
+                sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
+            sys.exit() #Clean Exit with Swaggy :D
+
+if __name__ == '__main__':
+    pass
