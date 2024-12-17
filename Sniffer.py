@@ -27,7 +27,7 @@ def main():
     sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
 
     if os.name =='nt': 
-        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON) #Read the Packets from the NetworkCard
+        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON) #ACCESS Interface, Turn on PromMode on Win.
      
     
     x = (sniffer.recvfrom(65565))
