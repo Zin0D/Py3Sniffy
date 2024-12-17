@@ -12,6 +12,7 @@ import os     #'' """               """ ''
 Depolying a Tool that uses Lin and Win              -BACK'''
 
 ''' SHELLCODE EXEC INCOMING SOON'''
+''' MORE MODULES IM ABT TO SPAM'''
 
 local_host = '192.168.178.34'
 

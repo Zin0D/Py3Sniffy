@@ -16,3 +16,5 @@ class icmp:
         self.seqnum = packet[4]
 
         self.type_map = {3: "DESTINATION UNREACHABLE", 8: "ECHO REPLY"}
+
+        self.type = self.type_map[self.type]
