@@ -85,4 +85,8 @@ class IPV4_HEADER:
             sys.exit() #Clean Exit with Swaggy :D
 
 if __name__ == '__main__':
-    pass
+    if len(sys.argv) == 2:
+        host = sys.argv[1]
+    else:
+        host = '192.168.178.34'
+    IPV4_HEADER.sniffit(host)
