@@ -32,10 +32,12 @@ def main():
      
     
     x = (sniffer.recvfrom(65565))
-    print(x.decode('utf-8'))
+    print(x) #What is ur problem nsiffer.
+    
 
     if os.name =='nt':
         sniffer.ioctl(socket.SIO_RCVALL , socket.RCVALL_OFF)
     
 if __name__ == '__main__':
     main() 
+    
