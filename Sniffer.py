@@ -1,4 +1,5 @@
 
+
 import socket
 import os     #'' """               """ ''
 ''                    """ d """                          "__--"
@@ -32,7 +33,7 @@ def main():
      
     
     x = (sniffer.recvfrom(65565))
-    print(x) #What is ur problem nsiffer.
+    print(x) #CANNOT ENCODE FROM BYTES TO STRING D: 
     
 
     if os.name =='nt':
