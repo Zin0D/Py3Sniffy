@@ -82,8 +82,10 @@ def sniffit(host):
             header_info_ipv4 = IPV4_HEADER(raw_packet[0:20]) #NOW THE FUN BEGINNS
             print(f'Protocol: {header_info_ipv4.protocol}, from: [{header_info_ipv4.src_adress}] --> [{header_info_ipv4.dst_adress}] : TTL {header_info_ipv4.ttl}')
             if header_info_ipv4.protocol == "ICMP":
-                offset = header_info_ipv4.ihl * 4
+                offset = header_info_ipv4.ihl * 4 #IHL can be range from 5 - 16 (IN WHICH 16-1 is the end.)
                 buf = raw_packet[offset:offset + 8]
+                icmp_header = ICMP.ICMP(buf) #ICMP file and ICMP Class, rip for readability.
+                print(f"Icmp Type: {icmp_header.type}")
             
                 
     except KeyboardInterrupt:
