@@ -98,5 +98,5 @@ if __name__ == '__main__':
     if len(sys.argv) == 2:
         host = sys.argv[1]
     else:
-        host = '192.168.178.34'
+        host = '192.168.178.34' #ENTER IN YOUR OWN HOST.
     sniffit(host)

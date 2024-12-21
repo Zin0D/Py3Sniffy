@@ -4,7 +4,9 @@ import ipaddress
 import socket
 import sys
 
-
+""" THIS CLASS IS IMPLEMENTED BY IMPORTING IT INTO decoding_ip.py 
+    I JUST LIKE HAVING ALL SEPERATE CLASSES SO DONT WONDER! :D
+"""
 
 class ICMP:
     def __init__(self, buff):

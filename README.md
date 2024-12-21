@@ -17,6 +17,5 @@ With its powerful and lightweight implementation, this tool is perfect for under
 ## Prerequisites
 Before running the sniffer, ensure you have the following installed:
 - **Python 3.x**
-- Required libraries (install using the command below):
-  ```bash
-  pip install -r requirements.txt
+- No Requierments needed to install, due to powerfull nature of socket lib.
+- Modify IP-Adress by specifing own IP Adress (NOT LOCALHOST INTERFACE but eth0, (giving your MACHINE-IP))

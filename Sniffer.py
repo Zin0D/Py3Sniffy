@@ -15,6 +15,8 @@ Depolying a Tool that uses Lin and Win              -BACK'''
 ''' SHELLCODE EXEC INCOMING SOON'''
 ''' MORE MODULES IM ABT TO SPAM'''
 
+""" PROF OF CONCEPT TO SEE HOW THIS LOOKS LIKE FOR MYSELF """
+
 local_host = '192.168.178.34'
 
 def main():
