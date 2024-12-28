@@ -11,7 +11,7 @@ With its powerful and lightweight implementation, this tool is perfect for under
 - **OS Detection**: Automatically detects if the system is running Windows, Unix.
 - **Packet Sniffing**: Captures and displays incoming network packets.
 - **Cross-Platform**: Compatible with multiple operating systems.
-- **Also Includes Ethernet Frames**: Able to capture and filter MAC-ADRESS
+- **Also Includes Ethernet Frames**: Able to capture and filter MAC-ADRESS //INCOMING 
 ---
 
 ## Prerequisites
